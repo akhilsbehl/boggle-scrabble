@@ -5,8 +5,8 @@ make[1]: Entering directory '/home/akhilsbehl/tmp/boggle/src'
   -d ../data/word_dictionary \
   -o ../data/output-simple.txt
 make[1]: Leaving directory '/home/akhilsbehl/tmp/boggle/src'
-86.15user 0.01system 1:27.39elapsed 98%CPU (0avgtext+0avgdata 41792maxresident)k
-0inputs+8outputs (0major+13620minor)pagefaults 0swaps
+90.41user 0.04system 1:32.02elapsed 98%CPU (0avgtext+0avgdata 41792maxresident)k
+0inputs+16outputs (0major+11553minor)pagefaults 0swaps
 time make ordcount
 make[1]: Entering directory '/home/akhilsbehl/tmp/boggle/src'
 ./boggle-ordered-counter.py \
@@ -14,8 +14,8 @@ make[1]: Entering directory '/home/akhilsbehl/tmp/boggle/src'
   -d ../data/word_dictionary \
   -o ../data/output-ordered-counter.txt
 make[1]: Leaving directory '/home/akhilsbehl/tmp/boggle/src'
-127.74user 0.07system 2:09.67elapsed 98%CPU (0avgtext+0avgdata 41820maxresident)k
-0inputs+8outputs (0major+13612minor)pagefaults 0swaps
+127.96user 0.01system 2:09.48elapsed 98%CPU (0avgtext+0avgdata 41796maxresident)k
+0inputs+16outputs (0major+11572minor)pagefaults 0swaps
 time make trie
 make[1]: Entering directory '/home/akhilsbehl/tmp/boggle/src'
 ./boggle-trie.py \
@@ -23,5 +23,5 @@ make[1]: Entering directory '/home/akhilsbehl/tmp/boggle/src'
   -d ../data/word_dictionary \
   -o ../data/output-trie.txt
 make[1]: Leaving directory '/home/akhilsbehl/tmp/boggle/src'
-6.71user 0.08system 0:06.91elapsed 98%CPU (0avgtext+0avgdata 259528maxresident)k
-8inputs+8outputs (0major+68869minor)pagefaults 0swaps
+4.69user 0.10system 0:04.87elapsed 98%CPU (0avgtext+0avgdata 259872maxresident)k
+0inputs+8outputs (0major+68336minor)pagefaults 0swaps
