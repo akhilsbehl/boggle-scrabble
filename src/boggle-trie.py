@@ -10,34 +10,31 @@
 import optparse
 from sys import stdout
 
+
 def makeTrieFromDictionary(dictionary, sentKey='', sentVal=None):
-    '''sentVal = None is to use the full word as the sentinel.'''
+    '''sentVal = None implies use the original word as the sentinel value so
+    that we can easily retrieve them later.'''
     trie = {}
     for word in dictionary:
         subTrie = trie
         for char in word:
             subTrie = subTrie.setdefault(char, {})
-        if sentVal is None:
-            subTrie[sentKey] = word
-        else:
-            subTrie[sentKey] = sentVal
+        subTrie[sentKey] = word if sentVal is None else sentVal
     return trie
 
 
 def findWordsOnBoard(board, dictTrie, sentKey=''):
-    '''The collection of words relies on the word itself being the sentinel
-    value. However, will count correctly.'''
+    '''The collection of the words from terminal nodes relies on the word
+    itself being used as the sentinel value when constructing the trie.
+    However, the counting will always be correct.'''
     words, count = [], 0
     if sentKey in dictTrie:
         words.append(dictTrie[sentKey])
         count += 1
     if board:
         for char in set(board):
-            try:
+            if char in dictTrie:
                 subTrie = dictTrie[char]
-            except KeyError:
-                pass
-            else:
                 subBoard = board.replace(char, '', 1)
                 _, __ = findWordsOnBoard(subBoard, subTrie)
                 words += _
