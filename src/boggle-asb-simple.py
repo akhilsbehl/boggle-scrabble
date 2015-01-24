@@ -53,8 +53,7 @@ if __name__ == '__main__':
         counter = [0] * len(boards)
         for word in dictionary:
             for i, board in enumerate(boards):
-                if boardContainsWordP(board, word):
-                    counter[i] += 1
+                counter[i] += boardContainsWordP(board, word)
         for board, count in zip(boards, counter):
             print("%s %d" % (board, count), file=outF)
         outF.close() if outF is not stdout else None

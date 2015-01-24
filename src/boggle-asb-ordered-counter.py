@@ -60,11 +60,9 @@ if __name__ == '__main__':
         dictionary = set([word.strip().lower() for
                           word in dictF.readlines() if len(word) > 3])
         boards = [board.strip() for board in inF.readlines()]
-        #counter = OrderedCounter(boards)
         counter = OrderedCounter()
         for word in dictionary:
             for board in boards:
-                if boardContainsWordP(board, word):
-                    counter[board] += 1
+                counter[board] += boardContainsWordP(board, word)
         counter.writeOut(to=outF)
         outF.close() if outF is not stdout else None
